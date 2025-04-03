@@ -1,0 +1,39 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<h1>Guess & Win</h1>
+<input id="guessnumber"></input>
+<button onclick="check()">Check</button>
+
+<p id="result">You are Right/Wrong</p>
+<p id="score">Score:10</p>
+
+<script>
+    //selecting guessnumber,result,score
+    var guessnumber= document.getElementById("guessnumber")
+    var result= document.getElementById("result")
+    var score= document.getElementById("score")
+
+    var randomNumber= Math.floor(Math.random()*10)+1
+    totalscore=10
+    console.log(score.textContent)
+    
+    function check(){
+        var enteredNumber= guessnumber.value
+        if(enteredNumber==randomNumber)
+    {
+        console.log("right")
+        result.textContent="You are Right"
+        alert("You won........")
+    }
+    else{
+       
+        totalscore= totalscore-1
+        score.textContent= "Your Score:"+totalscore+"/10"
+        console.log("wrong")
+        result.textContent="You are Wrong"
+    }
+    }
+
+</script>
